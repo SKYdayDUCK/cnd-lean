@@ -111,6 +111,6 @@
       "configFile": "lakefile.lean"
     }
   ],
-  "name": "cnd-lean",
+  "name": "cnd_lean",
   "lakeDir": ".lake"
 }

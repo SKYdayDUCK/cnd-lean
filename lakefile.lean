@@ -1,8 +1,8 @@
 import Lake
 open Lake DSL
 
-package «cnd-lean» where
-  leanOptions := #[⟨`autoImplicit, false⟩]
+package cnd_lean where
+  leanOptions := #[⟨`autoImplicit, false⟩, ⟨`maxRecDepth, 4096⟩, ⟨`maxHeartbeats, 2400000⟩]
 
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4.git" @ "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
