@@ -24,16 +24,16 @@ theorem paper_original_sg_main_with_rates (hν : (ν:ℝ)^2=σ^2+σe^2)
       CompleteConclusions (d:=Nat.clog 2 T) ν h B hB δc δg δl δa δn ω ∧
       (∀ u n : ℕ, u+n ≤ T → 0 < n →
         CNDPayment.intervalSum (actualLedger (d:=Nat.clog 2 T) ν h B (CNDNet.paperLc (Fin K) T δc) hB) u n ω ≤
-          (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2) ∧
+          (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2) ∧
       (globalBudget (d:=Nat.clog 2 T) ν h B (CNDNet.paperLc (Fin K) T δc) hB δg ω ≤
-        (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(paperL0 K T δc δg δl)^2) ∧
+        (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(paperL0 K T δc δg δl)^2) ∧
       (∀ u n : ℕ, u+n ≤ T → 0 < n → ∀ path : ℕ → Fin K,
         intervalPathRegret h u n path ω ≤ SGRate.paperPublicCoefficient ν K T B D δa δn *
           Real.sqrt ((n:ℝ)*((SGMain.intervalSwitchCount u n path+1:ℕ):ℝ)) +
-          (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2) ∧
+          (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2) ∧
       (∀ path : ℕ → Fin K, pathRegret h path ω ≤ SGRate.paperPublicCoefficient ν K T B D δa δn *
         Real.sqrt ((T:ℝ)*((SGMain.switchCount T path+1:ℕ):ℝ)) +
-        (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(paperL0 K T δc δg δl)^2)  := by
+        (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(paperL0 K T δc δg δl)^2)  := by
   obtain ⟨G,hG,hprob,hgood⟩ := SGRate.paper_original_sg_main_with_rates ν hν h.extend B hB δc δg δl δa δn hm.toInternal
     hK hT0 (by intro t ht; simpa only [SGInputs.extend,if_pos ht] using hc t ht)
     hδc hδg hδl hδa hδn hδ hδsum
@@ -62,16 +62,16 @@ theorem default_budget_sg_main_with_rates (hν : (ν:ℝ)^2=σ^2+σe^2)
       CompleteConclusions (d:=Nat.clog 2 T) ν h B hB (δ/5) (δ/5) (δ/5) (δ/5) (δ/5) ω ∧
       (∀ u n : ℕ, u+n ≤ T → 0 < n →
         CNDPayment.intervalSum (actualLedger (d:=Nat.clog 2 T) ν h B (CNDNet.paperLc (Fin K) T (δ/5)) hB) u n ω ≤
-          (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(SGRate.defaultLog K T δ)^2) ∧
+          (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(SGRate.defaultLog K T δ)^2) ∧
       (globalBudget (d:=Nat.clog 2 T) ν h B (CNDNet.paperLc (Fin K) T (δ/5)) hB (δ/5) ω ≤
-        (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(SGRate.defaultLog K T δ)^2) ∧
+        (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(SGRate.defaultLog K T δ)^2) ∧
       (∀ u n : ℕ, u+n ≤ T → 0 < n → ∀ path : ℕ → Fin K,
         intervalPathRegret h u n path ω ≤ SGRate.paperPublicCoefficient ν K T B D (δ/5) (δ/5) *
           Real.sqrt ((n:ℝ)*((SGMain.intervalSwitchCount u n path+1:ℕ):ℝ)) +
-          (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(SGRate.defaultLog K T δ)^2) ∧
+          (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(SGRate.defaultLog K T δ)^2) ∧
       (∀ path : ℕ → Fin K, pathRegret h path ω ≤ SGRate.paperPublicCoefficient ν K T B D (δ/5) (δ/5) *
         Real.sqrt ((T:ℝ)*((SGMain.switchCount T path+1:ℕ):ℝ)) +
-        (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(SGRate.defaultLog K T δ)^2)  := by
+        (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(SGRate.defaultLog K T δ)^2)  := by
   simpa only [SGRate.defaultLog] using paper_original_sg_main_with_rates ν hν h B hB
     (δ/5) (δ/5) (δ/5) (δ/5) (δ/5) hm hK hT0 hc
     (by positivity) (by positivity) (by positivity) (by positivity) (by positivity) hδ1 (by linarith)

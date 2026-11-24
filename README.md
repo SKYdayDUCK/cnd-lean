@@ -26,6 +26,34 @@ Use `import CNDLean` to bring the proofs into scope. `Audit.lean` checks that `C
 
 The source also includes probability transport, the conditionally negative definite radius, and the finite-horizon boundary cases. The theorem statements specify the feedback laws, confidence conditions, and rate assumptions.
 
+## Explicit dynamic regret rates for ECND
+
+The bounded and conditionally sub-Gaussian cases are covered by
+`Part2.ExponentialSublinear.bounded_dynamic_regret` and
+`Part2.ExponentialSublinear.sg_dynamic_regret`. Both use the original
+exponential update, a uniform expert prior, unit confidence and radius
+scales, and a fixed rate in the following band for each expert.
+
+$$
+\frac{1}{4W\sqrt T} \le \eta_e \le \frac{1}{2W\sqrt T}.
+$$
+
+Here $T$ is the horizon and $W$ is the broadcast-cost span bound.
+If each constant-arm interval needs at most $q_T$ cover pieces, each
+served by an expert starting at that piece, the expert term is at most
+$4W(s+1)q_T\sqrt T(\log |E| + e - 2)$, where $s$ is the comparator
+switch count and $|E|$ is the expert count. The sampling term scales as
+$\sqrt{T(s+1)}$ up to logarithms, and the private-learning budget enters
+once. The bounds hold simultaneously for all comparator paths at the
+chosen horizon on one high-probability event.
+
+`all_interval_schedule` constructs a bank of $KT(T+1)$ virtual experts,
+including inactive endpoint pairs, with one piece per comparison run.
+For fixed server count and cost scales, $(s+1)\log T=o(\sqrt T)$ suffices
+for sublinear regret with this bank. The asymptotic implication is checked
+in `Part2.ExponentialSublinearLimit`. The library also checks a linear
+regret example for a fixed positive rate in the expert update.
+
 ## License
 
 The formalization is released under the [MIT License](LICENSE). Its [mathlib dependency](https://github.com/leanprover-community/mathlib4/blob/f897ebcf72cd16f89ab4577d0c826cd14afaafc7/LICENSE) is licensed under Apache 2.0.

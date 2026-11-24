@@ -7,3 +7,6 @@ import staging.cnd20261026.«fix-bounded-sg».ExponentialSGFinite
 import staging.cnd20261026.«fix-bounded-sg».ExponentialZeroWidth
 import Part2.ExponentialAlternating
 import Part2.ExponentialSafeRate
+import staging.cnd20261026.«fix-bounded-sg».ExponentialSublinear
+import staging.cnd20261026.«fix-bounded-sg».ExponentialZeroWidthBudget
+import Part2.ExponentialSublinearLimit

@@ -104,7 +104,7 @@ theorem actual_cap_curve_rate (hK : 2 ≤ K) (hT0 : 1 ≤ T)
     (hcap : P ≤ (4 * R / CNDPhysical.c0) * (n : ℝ))
     (hcurve : P ≤ 4 * actualBudgetQ ν h B (CNDNet.paperLc (Fin K) T δc) hB hm u n ω +
       (4 * R / CNDPhysical.c0) * Λ) :
-    P ≤ (2496 / CNDPhysical.c0) * (R+M+(ν:ℝ)) * (K : ℝ) *
+    P ≤ (468 / CNDPhysical.c0) * (R+M+(ν:ℝ)) * (K : ℝ) *
       Real.sqrt (n : ℝ) * (paperL0 K T δc δg δl)^2 := by
   by_cases hR : R = 0
   · have hP : P ≤ 0 := by simpa only [hR, mul_zero, zero_mul, zero_div] using hcap
@@ -114,25 +114,18 @@ theorem actual_cap_curve_rate (hK : 2 ≤ K) (hT0 : 1 ≤ T)
       positivity)
   have hpar := paper_parameters hK hT0 hδc hδc1 hδg hδg1 hδl hδl1
   rw [actualQ_positive_R ν h B (CNDNet.paperLc (Fin K) T δc) hB hm hR u n ω] at hcurve
-  have hL4 : 1 ≤ 4*paperL0 K T δc δg δl := by linarith [hpar.1]
   have ha0 : 0 ≤ 4*CNDNet.paperLc (Fin K) T δc := mul_nonneg (by norm_num) hpar.2.1
-  have haU : 4*CNDNet.paperLc (Fin K) T δc ≤ (K:ℝ)*(4*paperL0 K T δc δg δl) := by
-    nlinarith [hpar.2.2.1]
-  have hdU : actualInformation ν h B (CNDNet.paperLc (Fin K) T δc) hB hm u n ω ≤
-      (K:ℝ)*(4*paperL0 K T δc δg δl) := by
-    have hd := actual_information_le_KL0 ν h B (CNDNet.paperLc (Fin K) T δc) hB hm hK hT0
-      hδc hδc1 hδg hδg1 hδl hδl1 u n hu ω
-    have hKL : 0 ≤ (K:ℝ)*paperL0 K T δc δg δl := by
-      exact mul_nonneg (Nat.cast_nonneg K) (by linarith [hpar.1])
-    nlinarith
-  have hΛ4 : Λ ≤ 4*paperL0 K T δc δg δl := by linarith [hpar.1]
-  have hf := CNDRateAbsorption.actual_budget_uniform_rate P (R+M+(ν:ℝ)) R CNDPhysical.c0
-    (K : ℝ) (n : ℝ) (4*paperL0 K T δc δg δl) (4*CNDNet.paperLc (Fin K) T δc)
+  have haU : 4*CNDNet.paperLc (Fin K) T δc ≤ 4*(K:ℝ)*paperL0 K T δc δg δl := by
+    simpa only [mul_assoc] using
+      mul_le_mul_of_nonneg_left hpar.2.2.1 (show (0:ℝ) ≤ 4 by norm_num)
+  have hdU := actual_information_le_KL0 ν h B (CNDNet.paperLc (Fin K) T δc) hB hm hK hT0
+    hδc hδc1 hδg hδg1 hδl hδl1 u n hu ω
+  exact CNDRateAbsorption.actual_budget_sg_rate P (R+M+(ν:ℝ)) R CNDPhysical.c0
+    (K : ℝ) (n : ℝ) (paperL0 K T δc δg δl) (4*CNDNet.paperLc (Fin K) T δc)
     (actualInformation ν h B (CNDNet.paperLc (Fin K) T δc) hB hm u n ω) Λ
     h.R_nonneg (by linarith [h.M_nonneg,ν.coe_nonneg]) CNDPhysical.c0_pos
-    (by exact_mod_cast (show 1 ≤ K by omega)) (by exact_mod_cast (show 1 ≤ n by omega)) hL4 ha0
-    (actual_information_bounds ν h B (CNDNet.paperLc (Fin K) T δc) hB hm u n ω).1 haU hdU hΛ0 hΛ4 hcap hcurve
-  convert hf using 1 <;> ring
+    (by exact_mod_cast (show 1 ≤ K by omega)) (by exact_mod_cast (show 1 ≤ n by omega)) hpar.1 ha0
+    (actual_information_bounds ν h B (CNDNet.paperLc (Fin K) T δc) hB hm u n ω).1 haU hdU hΛ0 hΛ hcap hcurve
 
 /-- Deterministic envelope rate on every actual sample point, including R=0. -/
 theorem exact_envelope_original_rate (hK : 2 ≤ K) (hT0 : 1 ≤ T)
@@ -140,7 +133,7 @@ theorem exact_envelope_original_rate (hK : 2 ≤ K) (hT0 : 1 ≤ T)
     (hδl : 0 < δl) (hδl1 : δl ≤ 1)
     (u n : ℕ) (hu : u+n ≤ T) (hn : 0 < n) (ω : Ω) :
     exactPaymentEnvelope ν h B (CNDNet.paperLc (Fin K) T δc) hB hm T u n δg δl ω ≤
-      (2496 / CNDPhysical.c0) * (R+M+(ν:ℝ)) * (K : ℝ) *
+      (468 / CNDPhysical.c0) * (R+M+(ν:ℝ)) * (K : ℝ) *
         Real.sqrt (n : ℝ) * (paperL0 K T δc δg δl)^2 := by
   have hpar := paper_parameters hK hT0 hδc hδc1 hδg hδg1 hδl hδl1
   exact actual_cap_curve_rate ν h B hB δc δg δl hm hK hT0 hδc hδc1 hδg hδg1 hδl hδl1
@@ -152,7 +145,7 @@ theorem global_budget_original_rate (hK : 2 ≤ K) (hT0 : 1 ≤ T)
     (hδc : 0 < δc) (hδc1 : δc ≤ 1) (hδg : 0 < δg) (hδg1 : δg ≤ 1)
     (hδl : 0 < δl) (hδl1 : δl ≤ 1) (ω : Ω) :
     globalBudget ν h B (CNDNet.paperLc (Fin K) T δc) hB hm T δg ω ≤
-      (2496 / CNDPhysical.c0) * (R+M+(ν:ℝ)) * (K : ℝ) *
+      (468 / CNDPhysical.c0) * (R+M+(ν:ℝ)) * (K : ℝ) *
         Real.sqrt (T : ℝ) * (paperL0 K T δc δg δl)^2 := by
   have hpar := paper_parameters hK hT0 hδc hδc1 hδg hδg1 hδl hδl1
   exact actual_cap_curve_rate ν h B hB δc δg δl hm hK hT0 hδc hδc1 hδg hδg1 hδl hδl1
@@ -189,16 +182,16 @@ theorem paper_original_sg_main_with_rates (hν : (ν:ℝ)^2=σ^2+σe^2)
       SGCompleteConclusions ν h B hB δc δg δl δa δn hm ω ∧
       (∀ u n : ℕ, u+n ≤ T → 0 < n →
         CNDPayment.intervalSum (actualLedger ν h B (CNDNet.paperLc (Fin K) T δc) hB hm) u n ω ≤
-          (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2) ∧
+          (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2) ∧
       (globalBudget ν h B (CNDNet.paperLc (Fin K) T δc) hB hm T δg ω ≤
-        (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(paperL0 K T δc δg δl)^2) ∧
+        (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(paperL0 K T δc δg δl)^2) ∧
       (∀ u n : ℕ, u+n ≤ T → 0 < n → ∀ path : ℕ → Fin K,
         intervalPathRegret h u n path ω ≤ paperPublicCoefficient ν K T B D δa δn *
           Real.sqrt ((n:ℝ)*((intervalSwitchCount u n path+1:ℕ):ℝ)) +
-          (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2) ∧
+          (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2) ∧
       (∀ path : ℕ → Fin K, pathRegret h T path ω ≤ paperPublicCoefficient ν K T B D δa δn *
         Real.sqrt ((T:ℝ)*((switchCount T path+1:ℕ):ℝ)) +
-        (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(paperL0 K T δc δg δl)^2) := by
+        (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(paperL0 K T δc δg δl)^2) := by
   have hδc1 : δc ≤ 1 := by linarith
   have hδg1 : δg ≤ 1 := by linarith
   have hδl1 : δl ≤ 1 := by linarith
@@ -212,7 +205,7 @@ theorem paper_original_sg_main_with_rates (hν : (ν:ℝ)^2=σ^2+σe^2)
     hδc hδc1 hδg hδg1 hδl hδl1 ω
   have hlocal : ∀ u n : ℕ, u+n ≤ T → 0 < n →
       CNDPayment.intervalSum (actualLedger ν h B (CNDNet.paperLc (Fin K) T δc) hB hm) u n ω ≤
-        (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2 := by
+        (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(paperL0 K T δc δg δl)^2 := by
     intro u n hu hn
     exact (hg.1.2.1 u n hu hn).trans (exact_envelope_original_rate ν h B hB δc δg δl hm
       hK hT0 hδc hδc1 hδg hδg1 hδl hδl1 u n hu hn ω)
@@ -238,16 +231,16 @@ theorem default_budget_sg_main_with_rates (hν : (ν:ℝ)^2=σ^2+σe^2)
       SGCompleteConclusions ν h B hB (δ/5) (δ/5) (δ/5) (δ/5) (δ/5) hm ω ∧
       (∀ u n : ℕ, u+n ≤ T → 0 < n →
         CNDPayment.intervalSum (actualLedger ν h B (CNDNet.paperLc (Fin K) T (δ/5)) hB hm) u n ω ≤
-          (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(defaultLog K T δ)^2) ∧
+          (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(defaultLog K T δ)^2) ∧
       (globalBudget ν h B (CNDNet.paperLc (Fin K) T (δ/5)) hB hm T (δ/5) ω ≤
-        (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(defaultLog K T δ)^2) ∧
+        (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(defaultLog K T δ)^2) ∧
       (∀ u n : ℕ, u+n ≤ T → 0 < n → ∀ path : ℕ → Fin K,
         intervalPathRegret h u n path ω ≤ paperPublicCoefficient ν K T B D (δ/5) (δ/5) *
           Real.sqrt ((n:ℝ)*((intervalSwitchCount u n path+1:ℕ):ℝ)) +
-          (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(defaultLog K T δ)^2) ∧
+          (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (n:ℝ)*(defaultLog K T δ)^2) ∧
       (∀ path : ℕ → Fin K, pathRegret h T path ω ≤ paperPublicCoefficient ν K T B D (δ/5) (δ/5) *
         Real.sqrt ((T:ℝ)*((switchCount T path+1:ℕ):ℝ)) +
-        (2496/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(defaultLog K T δ)^2) := by
+        (468/CNDPhysical.c0)*(R+M+(ν:ℝ))*(K:ℝ)*Real.sqrt (T:ℝ)*(defaultLog K T δ)^2) := by
   simpa only [defaultLog] using paper_original_sg_main_with_rates ν hν h B hB
     (δ/5) (δ/5) (δ/5) (δ/5) (δ/5) hm hK hT0 hc
     (by positivity) (by positivity) (by positivity) (by positivity) (by positivity) hδ1 (by linarith)

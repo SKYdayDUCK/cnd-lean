@@ -6,3 +6,10 @@ import CNDLean
 #print axioms Part2.AdjacentEncoderSG.conditional_mgf
 #print axioms Part2.ExponentialFiniteGap.unit_scale_budget_main
 #print axioms Part2.ExponentialSGFinite.original_legal_budget_main
+#print axioms Part2.ExponentialSublinear.bounded_dynamic_regret
+#print axioms Part2.ExponentialSublinear.sg_dynamic_regret
+#print axioms Part2.ExponentialSublinear.all_interval_schedule
+#print axioms Part2.ExponentialSublinearLimit.positive_average_of_polynomial_log_bound
+#print axioms Part2.ExponentialAlternating.positive_linear_regret
+#print axioms Part2.ExponentialZeroWidthBudget.bounded_common_event_with_gap
+#print axioms Part2.ExponentialZeroWidthBudget.sg_actual_zero_width_main
