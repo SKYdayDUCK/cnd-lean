@@ -11,7 +11,7 @@ import Mathlib.Tactic.LinearCombination
 This module keeps both current/+1 codes. Seeds are hidden: the channel masses
 below integrate them out. No public dither resource or private-component
 observation is introduced. The finite-channel algebra is not the adaptive
-statistical lower bound; see `audit/physical_quant.md` for the remaining steps.
+statistical lower bound.
 -/
 
 noncomputable section

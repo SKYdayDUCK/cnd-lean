@@ -241,11 +241,4 @@ theorem model_observed_residual {n : ℕ} (hn : n<T) :
   rfl
 end FiniteBounded
 
-#print axioms run_measurable
-#print axioms runProbability_measurable
-#print axioms run_weights_positive
-#print axioms run_suggestion_positive
-#print axioms model
-#print axioms model_finite_p
-#print axioms model_observed_residual
 end Part2.ExponentialStochastic

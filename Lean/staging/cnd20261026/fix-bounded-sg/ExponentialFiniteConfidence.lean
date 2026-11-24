@@ -128,9 +128,4 @@ theorem unit_scale_original_main (hK : 2≤K) (hT : 1≤T)
   exact unit_scale_actual_main h L hW c hm hK hT hc hs (broadcast_span h hwidth hcost)
     hδc hδc1 hδa hδa1 hδe hδe1 hL
 
-#print axioms computed_pairRadius_eq_model
-#print axioms unit_scale_confidence_event
-#print axioms unit_scale_main
-#print axioms unit_scale_actual_main
-#print axioms unit_scale_original_main
 end Part2.ExponentialFinite

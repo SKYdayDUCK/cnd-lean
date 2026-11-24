@@ -144,8 +144,4 @@ theorem center_confidence_event
     exact hb
 end Canonical
 
-#print axioms actualScoreSum_eq_runS
-#print axioms computed_estimate_eq_actual
-#print axioms computed_rawPairRadius_eq_model
-#print axioms center_confidence_event
 end Part2.ExponentialSGConfidence

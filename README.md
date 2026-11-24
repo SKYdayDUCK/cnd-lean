@@ -14,7 +14,7 @@ lake build
 lake env lean Audit.lean
 ```
 
-Use `import CNDLean` to bring the proofs into scope. `Audit.lean` reports the axioms of the theorem entry points below.
+Use `import CNDLean` to bring the proofs into scope. `Audit.lean` checks that `CNDLean` can be imported alongside mathlib's optional-stopping module and reports the axioms of the theorem entry points below.
 
 | Result | Lean declaration |
 | --- | --- |
@@ -28,7 +28,7 @@ The source also includes probability transport, the conditionally negative defin
 
 ## License
 
-The original formalization is released under the [MIT License](LICENSE). The pinned mathlib file [`PinnedOptionalStopping.lean`](Lean/staging/cnd20261024/probability/PinnedOptionalStopping.lean) retains its original copyright notice and uses [Apache 2.0](LICENSES/Apache-2.0.txt).
+The formalization is released under the [MIT License](LICENSE). Its [mathlib dependency](https://github.com/leanprover-community/mathlib4/blob/f897ebcf72cd16f89ab4577d0c826cd14afaafc7/LICENSE) is licensed under Apache 2.0.
 
 ## 中文说明
 

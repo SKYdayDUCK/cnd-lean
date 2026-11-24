@@ -223,10 +223,4 @@ theorem actual_conditional_e12_e13 (hv : Laws h a r v T W) (hW : 0 ≤ W) (hT : 
   rw [maximal_run_card path T hT] at hp
   exact hp
 
-#print axioms actual_gap
-#print axioms actual_cap
-#print axioms actual_interval_envelope
-#print axioms maximal_run_geometry
-#print axioms maximal_run_card
-#print axioms actual_conditional_e12_e13
 end Part2.ExponentialComposition

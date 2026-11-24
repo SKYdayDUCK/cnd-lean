@@ -272,26 +272,3 @@ theorem actual_inverse_energy_eq_resistance (p : ℕ → ι → ℝ)
 end Part2.CNDGraphBridge
 
 /-! Exhaustive public declaration axiom receipt. -/
-#print axioms Part2.CNDGraphBridge.edgeWeight
-#print axioms Part2.CNDGraphBridge.inverseContrast
-#print axioms Part2.CNDGraphBridge.osc
-#print axioms Part2.CNDGraphBridge.edgeWeight_nonneg
-#print axioms Part2.CNDGraphBridge.edgeWeight_symmetric
-#print axioms Part2.CNDGraphBridge.covariance_graph_action
-#print axioms Part2.CNDGraphBridge.information_graph_action
-#print axioms Part2.CNDGraphBridge.inverseContrast_zero_sum
-#print axioms Part2.CNDGraphBridge.inverseContrast_graph_equation
-#print axioms Part2.CNDGraphBridge.inverseContrast_self
-#print axioms Part2.CNDGraphBridge.actual_graph_maximum_principle
-#print axioms Part2.CNDGraphBridge.resistance_endpoint_difference
-#print axioms Part2.CNDGraphBridge.osc_eq_of_extrema
-#print axioms Part2.CNDGraphBridge.actual_inverse_osc_eq_resistance
-#print axioms Part2.CNDGraphBridge.actual_inverse_l1_bound
-#print axioms Part2.CNDGraphBridge.actual_endpoint_signs
-#print axioms Part2.CNDGraphBridge.actual_inverse_coordinate_bound
-#print axioms Part2.CNDGraphBridge.actual_inverse_pairwise_bound
-#print axioms Part2.CNDGraphBridge.actual_inverse_l2_squared_bound
-#print axioms Part2.CNDGraphBridge.actual_inverse_l2_bound
-#print axioms Part2.CNDGraphBridge.actual_regularization_bias
-#print axioms Part2.CNDGraphBridge.actual_regularization_bias_loose
-#print axioms Part2.CNDGraphBridge.actual_inverse_energy_eq_resistance

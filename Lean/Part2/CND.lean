@@ -4,8 +4,7 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
 /-!
-Finite conditional negative definiteness and the simplex objective in P6 of
-`CND_PROGRESS.md`. The Gaussian/Schoenberg and Bernstein closure steps are
+Finite conditional negative definiteness and the simplex objective. The Gaussian/Schoenberg and Bernstein closure steps are
 not assumptions of a claimed end-to-end radius construction in this file.
 -/
 

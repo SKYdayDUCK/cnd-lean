@@ -432,8 +432,7 @@ theorem bernstein_uniform (h : BoundedIncrements ℱ μ X V c) (hc : 0 < c)
   simp only [Finset.card_range] at hU
   exact (measureReal_mono hsub).trans (by nlinarith [hU])
 
-/-- The exact conservative confidence radius used in COMMON_DRIFT and
-MULTIARM_PROGRESS. The input is a bounded centered process with |X|≤2H and
+/-- A uniform confidence radius for centered bounded increments. The input is a bounded centered process with |X|≤2H and
 conditional second moment bounded by H²q; no pre-proved concentration is
 assumed. Per-step q≤1 covers the paper's stronger q≤1/4 condition. -/
 theorem paper_uniform {H : ℝ} (hH : 0 < H) {q : ℕ → Ω → ℝ}

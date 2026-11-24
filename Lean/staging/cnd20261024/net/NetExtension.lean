@@ -87,7 +87,3 @@ theorem extend_all (s : Finset E) {ε A B C : ℝ}
   exact (div_le_div_iff_of_pos_right hn).mp hu
 
 end Part2.CNDNet
-
-#print axioms Part2.CNDNet.extend_sphere
-#print axioms Part2.CNDNet.extension_error_bound
-#print axioms Part2.CNDNet.extend_all

@@ -125,11 +125,4 @@ theorem scaledPayment_envelope_delta (H Lc s : ℝ)
     (fun t i j ω => (scaledRadius_bounds h H Lc s hH hLc hs hs1 t i j ω).2)
     T hδg hδl
 
-#print axioms saturatedRadius_mono
-#print axioms saturatedRadius_scaled_bounds
-#print axioms scaledRadius_bounds
-#print axioms scaledRadius_isCND
-#print axioms observablePayment_mono
-#print axioms dominatedPayment_envelope_delta
-#print axioms scaledPayment_envelope_delta
 end Part2.ExponentialScaledRadius

@@ -153,11 +153,4 @@ theorem computed_estimate_eq_actualEstimator (hR : d.R ≠ 0) (n : ℕ) (hn : n�
   exact estimate_is_actual_inverse_statistic o d prior h.extend.feedback hR n ω i
 end FiniteBounded
 
-#print axioms actual_information_identity
-#print axioms actual_statistic_identity
-#print axioms runS_sum_zero
-#print axioms computed_radius_eq_actual
-#print axioms estimate_is_actual_inverse_statistic
-#print axioms computed_rawPairRadius_eq_actual
-#print axioms computed_estimate_eq_actualEstimator
 end Part2.ExponentialStochastic

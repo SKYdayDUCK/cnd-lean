@@ -291,9 +291,4 @@ theorem actual_e12_e13_with_gap (ν : ℝ≥0) (hν : (ν : ℝ)^2 = σ^2 + σe^
   · exact actual_e12_e13_with_gap_pos h a r v ν hν hv hW (Nat.pos_of_ne_zero hT)
       ha hr hδa hδa1 hδn hδn1
 
-#print axioms physical_step_le
-#print axioms common_event
-#print axioms e12_on_event
-#print axioms e13_on_event
-#print axioms actual_e12_e13_with_gap
 end Part2.ExponentialSGPhysical

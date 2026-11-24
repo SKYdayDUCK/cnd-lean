@@ -165,8 +165,4 @@ theorem zero_width_proxy_nonpos (hH : 0 ≤ H) (hL : 0 ≤ L) (hw0 : W=0)
   rw [← sum_mul,hp.2,one_mul] at hs
   exact sub_nonpos.mpr hs
 
-#print axioms scaled_actual_radius_isCND
-#print axioms run_scaled_radius_isCND
-#print axioms raw_geometry
-#print axioms zero_width_proxy_nonpos
 end Part2.ExponentialGeometry

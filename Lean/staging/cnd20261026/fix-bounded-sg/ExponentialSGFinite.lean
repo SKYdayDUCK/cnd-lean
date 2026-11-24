@@ -586,18 +586,4 @@ theorem actual_zero_width_main
     dsimp only [rplus] at hp
     simpa only [sum_const_zero, zero_add, hw0, ExponentialGap.payment_interval_analysisRadius, add_assoc] using hp
 
-#print axioms bridge
-#print axioms physical_before
-#print axioms compositionLaws
-#print axioms actual_gap_main
-#print axioms radius_le_canonical
-#print axioms actual_gap_budget_main
-#print axioms center_confidence_event
-#print axioms actual_legal_main
-#print axioms actual_legal_budget_main
-#print axioms interval_regret_eq_original
-#print axioms path_regret_eq_original
-#print axioms original_gap_budget_main
-#print axioms original_legal_budget_main
-#print axioms actual_zero_width_main
 end Part2.ExponentialSGFinite

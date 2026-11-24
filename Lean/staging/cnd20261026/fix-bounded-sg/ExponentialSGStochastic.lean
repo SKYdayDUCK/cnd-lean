@@ -204,10 +204,4 @@ theorem model_observed_residual {n : ℕ} (hn : n<T) :
   unfold SGInputs.residual SGInputs.physical SGInputs.broadcast
   ring
 
-#print axioms finite_run_prefix
-#print axioms laws_of_adjacent
-#print axioms publicShadow
-#print axioms model
-#print axioms model_finite_p
-#print axioms model_observed_residual
 end Part2.ExponentialSGStochastic

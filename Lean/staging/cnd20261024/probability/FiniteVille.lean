@@ -1,8 +1,8 @@
-import staging.cnd20261024.probability.PinnedOptionalStopping
+import Mathlib.Probability.Martingale.OptionalStopping
 import Part2.Bernstein
 
 /-! Finite-horizon Ville inequality on the original measure.
-The upstream optional-stopping file is byte-identical to the locked mathlib source.
+The argument uses mathlib's optional-stopping theorem.
 No tail probability or supermartingale property is a field of a new model. -/
 
 open MeasureTheory Filter Finset

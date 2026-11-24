@@ -293,17 +293,3 @@ theorem ftrl_hybrid_regret_le_span (q η : ℝ) (L p b ρ : ℕ → ι → ℝ)
 end Part2.HinfStability
 
 -- Explicit kernel-dependency queries for this staging proof package.
-#print axioms Part2.HinfStability.taylor_two
-#print axioms Part2.HinfStability.segment_positive
-#print axioms Part2.HinfStability.segment_hasDerivAt
-#print axioms Part2.HinfStability.pathValue_hasDerivAt
-#print axioms Part2.HinfStability.pathSlope_hasDerivAt
-#print axioms Part2.HinfStability.bregman_taylor
-#print axioms Part2.HinfStability.quadratic_young
-#print axioms Part2.HinfStability.inverse_curvature
-#print axioms Part2.HinfStability.stability_le_segment_norm
-#print axioms Part2.HinfStability.projection_composite_stability_le
-#print axioms Part2.HinfStability.projection_center_base
-#print axioms Part2.HinfStability.dot_center_base
-#print axioms Part2.HinfStability.projection_span_stability_le
-#print axioms Part2.HinfStability.ftrl_hybrid_regret_le_span

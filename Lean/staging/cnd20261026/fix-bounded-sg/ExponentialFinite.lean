@@ -168,10 +168,4 @@ theorem actual_conditional_main (hm : Protocol h L hW c (μ := μ)) (hL : 0≤L)
     hδa hδa1 hδe hδe1 C hC hcover
   exact ⟨G,hG,hprob,fun ω hω => conclusions_transfer h L hW c hm δa δe ω (hgood ω hω)⟩
 
-#print axioms bridge
-#print axioms compositionLaws
-#print axioms interval_physical_eq
-#print axioms path_physical_eq
-#print axioms conditional_main
-#print axioms actual_conditional_main
 end Part2.ExponentialFinite

@@ -65,6 +65,4 @@ theorem decisionMaps_one {K : ℕ} [Nonempty (Fin K)] (H L R W : ℝ)
   · funext s i j
     simp [radius,StatisticalMaps.rawRadius]
 
-#print axioms decisionMaps
-#print axioms decisionMaps_one
 end Part2.ExponentialScaledMaps

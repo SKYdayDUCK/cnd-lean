@@ -266,25 +266,3 @@ theorem default_budget_bounded_main_with_rates
     (by positivity) hδ1 (by linarith)
 
 end Part2.CNDHorizon.PaperBoundaryCases
-
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.bounded_zero_range_Q
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.sg_zero_range_Q
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.bounded_zero_range_globalBudget
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.sg_zero_range_globalBudget
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.bounded_zero_range_exactPaymentEnvelope
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.sg_zero_range_exactPaymentEnvelope
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.singleton_radius
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.singleton_Q
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.bounded_singleton_interval
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.sg_singleton_interval
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.bounded_singleton_ledger
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.sg_singleton_ledger
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.bounded_singleton_Q
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.sg_singleton_Q
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.bounded_singleton_conclusions
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.sg_singleton_conclusions
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.singleton_common_probability_one_event
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.finite_users_common_event
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.finite_users_common_conclusions
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.finite_users_from_certificates
-#print axioms Part2.CNDHorizon.PaperBoundaryCases.default_budget_bounded_main_with_rates

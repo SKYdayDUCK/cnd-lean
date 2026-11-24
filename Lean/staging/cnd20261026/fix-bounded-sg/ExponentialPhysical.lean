@@ -272,10 +272,4 @@ theorem conditional_e12_e13 {W : ℝ} (hW : 0 ≤ W) (T : ℕ)
     exact e13_on_event h a r hW T δa δe cost hexpert ω (hgood ω hω)
       P start len hblocks hends hlens path arm hconst
 
-#print axioms common_event
-#print axioms physical_step_le
-#print axioms proxyRegret_le_transported
-#print axioms e12_on_event
-#print axioms e13_on_event
-#print axioms conditional_e12_e13
 end Part2.ExponentialPhysical

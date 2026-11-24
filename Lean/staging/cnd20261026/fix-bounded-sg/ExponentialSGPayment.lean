@@ -62,6 +62,4 @@ theorem actual_e12_e13_with_gap_and_budget
       le_of_not_gt (fun hx => hb (Or.inr ⟨u,n,hu,hn,hx⟩))
     simpa only [CNDPayment.intervalSum, payment_eq_observable] using hp
 
-#print axioms payment_eq_observable
-#print axioms actual_e12_e13_with_gap_and_budget
 end Part2.ExponentialSGPayment

@@ -266,7 +266,4 @@ def compositionLaws (hm : Bridge H L hR hW c f m) (hH : 0 ≤ H) (hL : 0 ≤ L) 
       linarith
 
 
-#print axioms loss_before
-#print axioms actual_update
-#print axioms compositionLaws
 end Part2.ExponentialActual

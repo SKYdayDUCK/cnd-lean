@@ -152,8 +152,3 @@ def laws_of_adjacent
       exact Filter.Eventually.of_forall fun _ => rfl))
 
 end Part2.CNDHorizon
-
-#print axioms Part2.AdjacentEncoderSG.bernoulli_error_mem_cell
-#print axioms Part2.AdjacentEncoderSG.conditional_mgf
-#print axioms Part2.CNDHorizon.adjacent_encoder_conditional_mgf
-#print axioms Part2.CNDHorizon.laws_of_adjacent

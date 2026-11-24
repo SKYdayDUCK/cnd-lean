@@ -114,7 +114,3 @@ theorem exists_sphere_net {ε : ℝ} (hε : 0 < ε) :
   simpa using exists_subset_net {x : E | ‖x‖ = 1} (fun x hx => hx.le) hε
 
 end Part2.CNDNet
-
-#print axioms Part2.CNDNet.separated_card_bound
-#print axioms Part2.CNDNet.exists_subset_net
-#print axioms Part2.CNDNet.exists_sphere_net
