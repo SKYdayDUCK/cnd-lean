@@ -1,0 +1,7 @@
+import CNDLean
+
+#print axioms Part2.CNDHorizon.FiniteBounded.paper_original_main_with_rates
+#print axioms Part2.CNDHorizon.FiniteSG.paper_original_sg_main_with_rates
+#print axioms Part2.AdjacentEncoderSG.conditional_mgf
+#print axioms Part2.ExponentialFiniteGap.unit_scale_budget_main
+#print axioms Part2.ExponentialSGFinite.original_legal_budget_main
